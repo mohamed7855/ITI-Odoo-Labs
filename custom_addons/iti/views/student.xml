@@ -5,6 +5,7 @@
             <field name='res_model'>iti2.student</field>
         </record>
 
+        <!-- Tree View -->
         <record id='iti_student_tree_view' model='ir.ui.view'>
             <field name='name'>Student Tree View</field>
             <field name='model'>iti2.student</field>
@@ -14,6 +15,44 @@
                     <field name='age'/>
                     <field name='gender'/>
                 </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id='iti_student_form_view' model='ir.ui.view'>
+            <field name='name'>Student Form View</field>
+            <field name='model'>iti2.student</field>
+            <field name='arch' type='xml'>
+                <form>
+                    <sheet>
+
+                        <group string='General Information'>
+                            <field name='name'/>
+                            <field name='age'/>
+                            <field name='gender'/>
+                            <field name='dob'/>
+                        </group>
+                        <group string='Extra Information'>
+                            <field name='info'/>
+                            <field name='selary'/>
+                            <field name='cv'/>
+                        </group>
+
+                        <notebook>
+                            <page string='Working Information'>
+                                <group>
+                                    <group>
+                                        <field name='is_working'/>
+                                    </group>
+                                    <group>
+                                        <field name='summery'/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
             </field>
         </record>
 

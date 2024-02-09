@@ -10,3 +10,6 @@ class Student(models.Model):
     selary = fields.Integer()
     cv = fields.Html()
     dob = fields.Date()
+
+    is_working = fields.Boolean(default=False)
+    summery = fields.Text()

@@ -14,6 +14,7 @@
                     <field name='name'/>
                     <field name='age'/>
                     <field name='gender'/>
+                    <field name='track'/>
                 </tree>
             </field>
         </record>
@@ -33,9 +34,10 @@
                             <field name='dob'/>
                         </group>
                         <group string='Extra Information'>
+                            <field name='is_working' invisible='1'/>
                             <field name='info'/>
-                            <field name='selary'/>
-                            <field name='cv'/>
+                            <field name='selary' attrs="{'invisible': [('is_working', '=', False)]}"/>
+                            <field name='cv' attrs="{'required': [('is_working', '=', True)]}"/>
                         </group>
 
                         <notebook>
@@ -49,6 +51,15 @@
                                     </group>
                                 </group>
                             </page>
+
+                            <page string='Track Information'>
+                                <group>
+                                    <field name='track' domain="[('is_opened', '=', True)]"/>
+                                </group>
+                                <group>
+                                    <field name='trackCapacity'/>
+                                </group>
+                            </page>
                         </notebook>
 
                     </sheet>
@@ -56,7 +67,7 @@
             </field>
         </record>
 
-        <menuitem name='ITI-STUDENTS' id='iti_main_menu'/>
-        <menuitem name='STUDENTS' id='students_menu' parent='iti_main_menu' action='students_action'/>
+        <menuitem name='ITI' id='iti_main_menu'/>
+        <menuitem name='STUDENTS' id='students_menu' parent='iti_main_menu' action='students_action' sequence='2'/>
     </data>
 </odoo>

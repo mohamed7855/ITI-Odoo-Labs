@@ -3,7 +3,7 @@ from odoo import models,fields
 class Student(models.Model):
     _name = 'iti2.student'
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     age = fields.Integer()
     gender = fields.Selection([('male', 'male'), ('female', 'female')])
     info = fields.Text()
@@ -13,3 +13,6 @@ class Student(models.Model):
 
     is_working = fields.Boolean(default=False)
     summery = fields.Text()
+
+    track = fields.Many2one(comodel_name='iti2.track')
+    trackCapacity = fields.Integer(related='track.capacity')

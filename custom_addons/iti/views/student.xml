@@ -5,7 +5,19 @@
             <field name='res_model'>iti2.student</field>
         </record>
 
-        <menuitem name='ITI' id='iti_main_menu'/>
+        <record id='iti_student_tree_view' model='ir.ui.view'>
+            <field name='name'>Student Tree View</field>
+            <field name='model'>iti2.student</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name='name'/>
+                    <field name='age'/>
+                    <field name='gender'/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem name='ITI-STUDENTS' id='iti_main_menu'/>
         <menuitem name='STUDENTS' id='students_menu' parent='iti_main_menu' action='students_action'/>
     </data>
 </odoo>

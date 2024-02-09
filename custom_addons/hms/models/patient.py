@@ -2,6 +2,7 @@ from odoo import models,fields
 
 class Patient(models.Model):
     _name = 'hms.patient'
+    _rec_name = 'first_name'
 
     first_name = fields.Char(string='First Name', required=True)
     last_name = fields.Char(string='Last Name', required=True)

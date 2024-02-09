@@ -17,6 +17,25 @@
             </field>
         </record>
 
+        <!-- Form View -->
+        <record id='iti_doctor_form_view' model='ir.ui.view'>
+            <field name='name'>Doctor Form View</field>
+            <field name='model'>hms.doctor</field>
+            <field name='arch' type='xml'>
+                <form>
+                    <sheet>
+
+                        <group string='General Information'>
+                            <field name='FirstName'/>
+                            <field name='LastName'/>
+                            <field name='Image'/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <menuitem name='DOCTORS' id='doctors_menu' parent='iti_main_menu' action='doctors_action' sequence='2'/>
     </data>
 </odoo>

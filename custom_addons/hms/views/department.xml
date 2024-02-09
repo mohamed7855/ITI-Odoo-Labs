@@ -18,6 +18,29 @@
             </field>
         </record>
 
+        <!-- Form View -->
+        <record id='iti_department_form_view' model='ir.ui.view'>
+            <field name='name'>Departmemt Form View</field>
+            <field name='model'>hms.department</field>
+            <field name='arch' type='xml'>
+                <form>
+                    <sheet>
+
+                        <group string='General Information'>
+                            <field name='Name'/>
+                            <field name='Capacity'/>
+                            <field name='Is_opened'/>
+                        </group>
+
+                        <group string='Patient Information'>
+                            <field name='Patients'/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <menuitem name='DEPARTMENTS' id='departments_menu' parent='iti_main_menu' action='departments_action' sequence='1'/>
     </data>
 </odoo>

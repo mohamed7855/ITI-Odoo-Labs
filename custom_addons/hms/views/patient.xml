@@ -4,7 +4,22 @@
             <field name='name'>Patients</field>
             <field name='res_model'>hms.patient</field>
         </record>
-        
+
+        <!-- Tree View -->
+        <record id='iti_patient_tree_view' model='ir.ui.view'>
+            <field name='name'>Patient Tree View</field>
+            <field name='model'>hms.patient</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name='first_name'/>
+                    <field name='last_name'/>
+                    <field name='blood_type'/>
+                    <field name='pcr'/>
+                    <field name='age'/>
+                </tree>
+            </field>
+        </record>
+                
         <menuitem name='HMS' id='iti_main_menu'/>
         <menuitem name='PATIENTS' id='patients_menu' parent='iti_main_menu' action='patients_action' sequence='3'/>
     </data>

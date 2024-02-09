@@ -5,6 +5,19 @@
             <field name='res_model'>hms.department</field>
         </record>
         
+        <!-- Tree View -->
+        <record id='iti_department_tree_view' model='ir.ui.view'>
+            <field name='name'>Department Tree View</field>
+            <field name='model'>hms.department</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name='Name'/>
+                    <field name='Capacity'/>
+                    <field name='Is_opened'/>
+                </tree>
+            </field>
+        </record>
+
         <menuitem name='DEPARTMENTS' id='departments_menu' parent='iti_main_menu' action='departments_action' sequence='1'/>
     </data>
 </odoo>

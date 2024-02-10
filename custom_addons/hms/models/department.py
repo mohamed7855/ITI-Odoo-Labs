@@ -7,4 +7,4 @@ class Department(models.Model):
     Name = fields.Char(string='Name')
     Capacity = fields.Integer()
     Is_opened = fields.Boolean()
-    Patients = fields.Char()
+    Patients = fields.One2many(comodel_name='hms.patient', inverse_name='department')

@@ -29,6 +29,7 @@
                             <field name='FirstName'/>
                             <field name='LastName'/>
                             <field name='Image'/>
+                            <field name='patients'/>
                         </group>
 
                     </sheet>

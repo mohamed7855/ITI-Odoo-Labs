@@ -19,3 +19,14 @@ class Patient(models.Model):
     image = fields.Binary(string='Image')
     address = fields.Text(string='Address')
     age = fields.Integer(string='Age')
+
+    doctors = fields.Many2many(comodel_name='hms.doctor', string='Doctors')
+    department = fields.Many2one(comodel_name='hms.department', string='Departments')
+    departmentCapacity = fields.Integer(related='department.Capacity', string='Department Capacity')
+
+    states = fields.Selection([
+        ('Undetermined', 'Undetermined'),
+        ('Good', 'Good'),
+        ('Fair', 'Fair'),
+        ('Serious', 'Serious'),
+    ], string='States')

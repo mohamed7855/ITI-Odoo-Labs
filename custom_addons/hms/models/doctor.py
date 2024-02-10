@@ -7,3 +7,5 @@ class Doctor(models.Model):
     FirstName = fields.Char(string='First Name')
     LastName = fields.Char(string='Last Name')
     Image = fields.Binary(string='Image')
+
+    patients = fields.Many2many(comodel_name='hms.patient', string='Patients')

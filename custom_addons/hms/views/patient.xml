@@ -46,12 +46,26 @@
 
                             <page string='Health Information'>
                                 <group>
-                                    <field name='history'/>
+                                    <field name='history' attrs="{'invisible':[('age', '&lt;', 50)]}"/>
                                 </group>
                                 <group>
-                                    <field name='cr_ratio'/>
+                                    <field name='cr_ratio' attrs="{'invisible': [('pcr', '=', False)], 'required': [('pcr', '=', True)]}"/>
                                     <field name='blood_type'/>
-                                    <field name='pcr'/>
+                                    <field name='pcr' />
+                                </group>
+                                <group>
+                                    <field name='department' invisible='1'/>
+                                    
+                                     <field name='doctors' attrs="{'readonly':[('department', '=', 'False')]}"/>
+                                     <field name='states'/>
+                                </group>
+                                
+                            </page>
+
+                            <page string='Department Information'>
+                                <group>
+                                    <field name='department' domain="[('Is_opened', '=', True)]"/>
+                                    <field name='departmentCapacity'/>
                                 </group>
                             </page>
                         </notebook>

@@ -1,10 +1,14 @@
 from odoo import models,fields,api
+from odoo.exceptions import ValidationError
+from datetime import date
 
 class Student(models.Model):
     _name = 'iti2.student'
 
     name = fields.Char(required=True)
-    age = fields.Integer()
+    age = fields.Integer(required = True , compute = 'calculate_age' , store = True)
+    graduate_age = fields.Integer(compute = 'calculate_age')
+
     gender = fields.Selection([('male', 'male'), ('female', 'female')])
     info = fields.Text()
     selary = fields.Integer()
@@ -22,6 +26,11 @@ class Student(models.Model):
     log = fields.One2many(comodel_name='iti2.log', inverse_name='student')
     logDescription = fields.Char(related='log.description')
 
+    # constrains on all DB
+    _sql_constraints = [
+        ('unique_student_name', 'UNIQUE(name)', 'This Student Name Already Exists Before'),
+        ('age_check', 'CHECK(age >= 18)', 'Age Can\'t Be Less than 18')
+    ]
 
     def ChangeState(self):
         if self.state == 'level1':
@@ -57,4 +66,20 @@ class Student(models.Model):
                 'student': rec.id
             })
 
-    
+    # constrains on insert record from odoo
+    @api.constrains('age')
+    def check_age(self):
+        for rec in self:
+            if rec.age <= 0:
+                raise ValidationError('Age Can\'t be less than or equal zero.')
+            
+    @api.depends('dob')
+    def calculate_age(self):
+        for rec in self:
+            if rec.dob:
+                today = date.today()
+                rec.age = today.year - rec.dob.year - (
+                        (today.month, today.day) < (rec.dob.month, rec.dob.day))
+            else:
+                rec.age = 1
+            rec.graduate_age = rec.age + 5

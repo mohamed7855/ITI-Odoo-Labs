@@ -36,6 +36,7 @@
                             <field name='age'/>
                             <field name='gender'/>
                             <field name='dob'/>
+                            <field name='graduate_age'/>
                         </group>
                         <group string='Extra Information'>
                             <field name='is_working' invisible='1'/>

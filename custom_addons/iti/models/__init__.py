@@ -1,1 +1,1 @@
-from . import student, track, stateLog
+from . import student, track, stateLog, product_inherit

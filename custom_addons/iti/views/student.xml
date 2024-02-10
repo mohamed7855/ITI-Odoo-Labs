@@ -25,6 +25,10 @@
             <field name='model'>iti2.student</field>
             <field name='arch' type='xml'>
                 <form>
+                    <header>
+                        <field name='state' widget='statusbar' nolabel='1' options="{'clickable':'1'}"/>
+                        <button name='ChangeState' string='ChangeLevel' type='object'/>
+                    </header>
                     <sheet>
 
                         <group string='General Information'>
@@ -60,6 +64,28 @@
                                     <field name='trackCapacity'/>
                                 </group>
                             </page>
+
+                            <page string='Log Information'>
+                                <group>
+                                    <field name='log'/>
+                                </group>
+                                <group>
+                                    <field name='logDescription'/>
+                                </group>
+                            </page>
+                            <!-- The Same -->
+                            <page string='Log Information'>
+                                <field name='log'>
+                                    <tree>
+                                        <field name='create_uid'/>
+                                        <field name='create_date'/>
+                                        <field name='write_uid'/>
+                                        <field name='write_date'/>
+                                        <field name='description'/>
+                                    </tree>
+                                </field>
+                            </page>
+
                         </notebook>
 
                     </sheet>

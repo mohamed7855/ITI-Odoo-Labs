@@ -56,7 +56,7 @@
                                 <group>
                                     <field name='department' invisible='1'/>
                                     
-                                     <field name='doctors' attrs="{'readonly':[('department', '=', 'False')]}"/>
+                                     <field name='doctors' attrs="{'readonly':[('department', '=', False)]}"/>
                                      <field name='states'/>
                                 </group>
                                 

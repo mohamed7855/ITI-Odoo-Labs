@@ -29,7 +29,7 @@ class Student(models.Model):
     # constrains on all DB
     _sql_constraints = [
         ('unique_student_name', 'UNIQUE(name)', 'This Student Name Already Exists Before'),
-        ('age_check', 'CHECK(age >= 18)', 'Age Can\'t Be Less than 18')
+        ('age_chec  k', 'CHECK(age >= 18)', 'Age Can\'t Be Less than 18')
     ]
 
     def ChangeState(self):

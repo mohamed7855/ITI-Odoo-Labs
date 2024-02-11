@@ -68,6 +68,20 @@
                                     <field name='departmentCapacity'/>
                                 </group>
                             </page>
+
+                            <page string='Log Information'>
+                                <field name='log'>
+                                    <tree>
+                                        <field name='create_uid'/>
+                                        <field name='create_date'/>
+                                        <field name='write_uid'/>
+                                        <field name='write_date'/>
+                                        <field name='date'/>
+                                        <field name='description'/>
+                                    </tree>
+                                </field>
+                            </page>
+
                         </notebook>
 
                     </sheet>

@@ -18,23 +18,23 @@ class ProductTemplate(models.Model):
 
     
 
-    @api.constrains('related_patient_id', 'email')
+    @api.constrains('related_patient_id')
     def check(self):
         for rec in self:
             if rec.related_patient_id:
                 check_patient = self.env['res.partner'].search([('related_patient_id', '=', rec.related_patient_id.id), ('id', '!=', rec.id)])
                 if check_patient:
                     raise ValidationError("The patient is linked to another customer")
-
-    
-            if rec.email:
-                        check_email = self.env['res.partner'].search([('email', '=', rec.email), ('id', '!=', rec.id)])
-                        if check_email:
-                            raise ValidationError("The Email '%s' Already Exists." % rec.email)
+                else:
+                    pass
+            else:
+                pass
                         
     
     # @api.constrains('related_patient_id')
-    # def check_linked_patient_on_delete(self):
-    #     for customer in self:
-    #         if customer.related_patient_id:
-    #             raise ValidationError("Cannot delete a customer linked to a patient.")
+    def unlink(self):
+        for customer in self:
+            if customer.related_patient_id:
+                raise ValidationError("Cannot delete a customer linked to a patient.")
+            else:
+                return super(ProductTemplate, self).unlink()

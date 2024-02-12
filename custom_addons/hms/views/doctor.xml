@@ -37,6 +37,6 @@
             </field>
         </record>
 
-        <menuitem name='DOCTORS' id='doctors_menu' parent='iti_main_menu' action='doctors_action' sequence='2'/>
+        <menuitem name='DOCTORS' id='doctors_menu' parent='iti_main_menu' action='doctors_action' sequence='2' groups='hms.managers2_group'/>
     </data>
 </odoo>

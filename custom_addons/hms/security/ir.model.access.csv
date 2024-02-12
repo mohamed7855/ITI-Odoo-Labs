@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+iti_mangers_patient_access,iti_mangers_patient_access,model_hms_patient,managers2_group,1,1,1,1
+iti_mangers_log_access,iti_mangers_log_access,model_hms_log,managers2_group,1,1,1,1
+iti_mangers_doctor_access,iti_mangers_doctor_access,model_hms_doctor,managers2_group,1,1,1,1
+iti_mangers_department_access,iti_mangers_department_access,model_hms_department,managers2_group,1,1,1,1
+iti_users_patient_access,iti_users_patient_access,model_hms_patient,users2_group,1,1,1,0
+iti_users_log_access,iti_users_log_access,model_hms_log,users2_group,1,1,1,0
+iti_users_doctor_access,iti_users_doctor_access,model_hms_doctor,users2_group,1,0,0,0
+iti_users_department_access,iti_users_department_access,model_hms_department,users2_group,1,0,0,0
+iti_employees_patient_access,iti_employees_patient_access,model_hms_patient,employees2_group,1,1,1,0
+iti_employees_log_access,iti_employees_log_access,model_hms_log,employees2_group,1,1,1,1
+iti_employees_doctor_access,iti_employees_doctor_access,model_hms_doctor,employees2_group,1,1,1,0
+iti_employees_department_access,iti_employees_department_access,model_hms_department,employees2_group,1,1,1,0

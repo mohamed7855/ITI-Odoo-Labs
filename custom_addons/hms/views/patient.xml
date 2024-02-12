@@ -16,6 +16,7 @@
                     <field name='blood_type'/>
                     <field name='pcr'/>
                     <field name='age'/>
+                    <field name='email'/>
                 </tree>
             </field>
         </record>
@@ -33,6 +34,7 @@
                             <field name='first_name'/>
                             <field name='last_name'/>
                             <field name='age'/>
+                            <field name='email'/>
                         </group>
 
                         <notebook>

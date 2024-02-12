@@ -1,1 +1,1 @@
-from . import patient,department,doctor,log
+from . import patient,department,doctor,log,customer_inherit
